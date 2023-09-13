@@ -23,27 +23,27 @@ public class BreakfastController {
 		return "breakfast";
 	}
 
-	@GetMapping("/breakfast/sport-eat/add")
+	@GetMapping("/breakfast/add")
 	public String breakfastAdd(Model model){
-		return "sporteat-add";
+		return "breakfast-add";
 	}
 
-	@PostMapping("/breakfast/sport-eat/add")
+	@PostMapping("/breakfast/add")
 	public String breakfastAdd(@RequestParam String name, @RequestParam String anons, @RequestParam String full_text, Model model){
 		Breakfast brfa = new Breakfast(name, anons, full_text);
 		breakfastRepository.save(brfa);
-		return "redirect:/blog/sport-eat";
+		return "redirect:/breakfast";
 	}
 
-	@GetMapping("/breakfast/sport-eat/{id}")
+	@GetMapping("/breakfast/{id}")
 	public String breakfastInfo(@PathVariable(value = "id") long id, Model model){
 		if (!breakfastRepository.existsById(id)) {
-			return "redirect:/blog/sport-eat";
+			return "redirect:/breakfast";
 		}
 		Optional<Breakfast> sport = breakfastRepository.findById(id);
 		ArrayList<Breakfast> res = new ArrayList<>();
 		sport.ifPresent(res::add);
 		model.addAttribute("Breakfast", res);
-		return "sporteat-info";
+		return "breakfast-info";
 	}
 }
