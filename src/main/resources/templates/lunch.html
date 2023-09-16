@@ -8,7 +8,7 @@
 <body>
 <div class="container py-3" bis_skin_checked="1">
 
-    <header th:insert="blocks/header :: header"></header>
+    <header th:insert="~{blocks/header}"></header>
 
     <br>
     <main>
@@ -16,7 +16,7 @@
 
         </div>
 
-        <div th:insert="blocks/footer :: footer"></div>
+        <div th:insert="~{blocks/footer}"></div>
 
     </main>
     <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
