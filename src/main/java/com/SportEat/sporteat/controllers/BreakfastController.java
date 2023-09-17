@@ -20,6 +20,8 @@ public class BreakfastController {
 
 	@GetMapping("/breakfast")
 	public String main(Model model){
+		Iterable<Breakfast> breakfast = breakfastRepository.findAll();
+		model.addAttribute("breakfast", breakfast);
 		return "breakfast";
 	}
 
@@ -43,7 +45,7 @@ public class BreakfastController {
 		Optional<Breakfast> sport = breakfastRepository.findById(id);
 		ArrayList<Breakfast> res = new ArrayList<>();
 		sport.ifPresent(res::add);
-		model.addAttribute("Breakfast", res);
+		model.addAttribute("breakfast", res);
 		return "breakfast-info";
 	}
 }
