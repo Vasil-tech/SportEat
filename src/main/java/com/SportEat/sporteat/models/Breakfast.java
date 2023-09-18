@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 @Entity
 public class Breakfast {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name, anons, full_text;
 	private int views;
