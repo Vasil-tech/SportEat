@@ -21,7 +21,7 @@ public class BreakfastController {
 	@GetMapping("/breakfast")
 	public String main(Model model){
 		Iterable<Breakfast> breakfast = breakfastRepository.findAll();
-		model.addAttribute("breakfast", breakfast);
+		model.addAttribute("Breakfast", breakfast);
 		return "breakfast";
 	}
 
